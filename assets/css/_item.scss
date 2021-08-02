@@ -1,0 +1,36 @@
+.catalog {
+  .global-item {
+    width                : 264px;
+    display              : grid;
+    grid-template-columns: 1fr 175px 1fr;
+    grid-template-rows   : 175px 1fr;
+
+    .global-item__rating {
+      grid-column : 1 / 2;
+      grid-row    : 1 / 2;
+      justify-self: start;
+    }
+
+    .global-item__photo {
+      width       : 175px;
+      height      : 175px;
+      grid-column : 2 / 3;
+      grid-row    : 1 / 2;
+      justify-self: center;
+      align-self  : start;
+    }
+
+    .global-item__button {
+      grid-column : 3 / 4;
+      grid-row    : 1 / 2;
+      justify-self: end;
+    }
+
+    .global-item__text {
+      grid-column : 1 / 4;
+      grid-row    : 2 / 3;
+      justify-self: start;
+      margin-top  : 5px;
+    }
+  }
+}

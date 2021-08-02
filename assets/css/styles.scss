@@ -1,0 +1,230 @@
+@import "variables";
+@import "mixin";
+
+@import "item";
+@import "item-cart";
+
+
+*,
+*:before,
+*:after {
+  padding   : 0;
+  margin    : 0;
+  border    : 0;
+  box-sizing: border-box;
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
+
+@font-face {
+  font-family : $font-app;
+  font-display: swap;
+  font-weight : 400;
+  src         : url('~@/assets/fonts/PTSans-Regular.ttf');
+}
+
+@font-face {
+  font-family : "PT-Sans";
+  font-display: swap;
+  font-weight : 700;
+  src         : url('~@/assets/fonts/PTSans-Bold.ttf');
+}
+
+html,
+body {
+  height     : 100%;
+  width      : 100%;
+  font-family: 'PT-Sans';
+  font-style : normal;
+  font-weight: 400;
+  font-size  : 14px;
+  min-width  : 320px;
+}
+
+nav a:hover {
+  font-size  : 16px;
+  line-height: 21px;
+  color      : #59606D;
+}
+
+nav a {
+  font-size  : 16px;
+  line-height: 21px;
+  color      : #959DAD;
+}
+
+a {
+  text-decoration: none;
+}
+
+// animation modal window 
+
+.animateModal-enter-active,
+.animateModal-leave-active {
+  transition: opacity 0.5s;
+}
+
+.animateModal-enter,
+.animateModal-leave-to {
+  opacity: 0;
+}
+
+
+// animation for successful sending form 
+
+.pulse-ok-hand {
+  -webkit-animation-name     : pulse;
+  animation-name             : pulse;
+  -webkit-animation-duration : 1s;
+  animation-duration         : 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode        : both;
+  -webkit-animation-delay    : 0.5s;
+  animation-delay            : 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform        : scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5);
+    transform        : scale3d(1.5, 1.5, 1.5);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform        : scale3d(1, 1, 1);
+  }
+}
+
+.nuxt-link-exact-active {
+  font-size           : 16px;
+  line-height         : 21px;
+  text-decoration-line: underline;
+  color               : #1F1F1F;
+}
+
+// animation filter 
+
+.fade-filter-enter-active,
+.fade-filter-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-filter-enter,
+.fade-filter-leave-to {
+  opacity: 0;
+}
+
+// animation adding to the cart 
+
+
+.animate-cart {
+  -webkit-animation-name     : bounceIn;
+  animation-name             : bounceIn;
+  -webkit-animation-duration : .75s;
+  animation-duration         : .75s;
+  -webkit-animation-duration : 1s;
+  animation-duration         : 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode        : both;
+}
+
+@-webkit-keyframes bounceIn {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function        : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity          : 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform        : scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform        : scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform        : scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity          : 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform        : scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform        : scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity          : 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform        : scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function        : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity          : 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform        : scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform        : scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform        : scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity          : 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform        : scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform        : scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity          : 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform        : scale3d(1, 1, 1);
+  }
+}

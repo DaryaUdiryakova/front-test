@@ -1,0 +1,70 @@
+@mixin hoverButton($width, $height, $color, $colorHover) {
+  width : $width;
+  height: $height;
+  cursor: pointer;
+  fill  : $color;
+
+  &:hover {
+    fill      : $colorHover;
+    transition: 0.3s all;
+  }
+}
+
+@mixin formButton {
+  width        : 100%;
+  background   : $primary-text;
+  border-radius: 8px;
+  padding      : 15px;
+  font-size    : 16px;
+  line-height  : 21px;
+  text-align   : center;
+  color        : #ffffff;
+  margin-top   : 10px;
+  cursor       : pointer;
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+@mixin animationPanelCart {
+  -webkit-animation-name     : slideInRight;
+  animation-name             : slideInRight;
+  -webkit-animation-duration : 1s;
+  animation-duration         : 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode        : both;
+
+  @-webkit-keyframes slideInRight {
+    0% {
+      -webkit-transform: translateX(100%);
+      transform        : translateX(100%);
+      visibility       : visible;
+    }
+
+    100% {
+      -webkit-transform: translateX(0);
+      transform        : translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      -webkit-transform: translateX(100%);
+      transform        : translateX(100%);
+      visibility       : visible;
+    }
+
+    100% {
+      -webkit-transform: translateX(0);
+      transform        : translateX(0);
+    }
+  }
+}
+
+
+// @mixin transform($property) {
+//   -webkit-transform: $property;
+//   -ms-transform: $property;
+//   transform: $property;
+// }
